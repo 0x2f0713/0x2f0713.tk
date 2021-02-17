@@ -125,7 +125,7 @@ class MenusTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    { 
+    {
         /* Get roles */
         $this->adminRole = Role::where('name' , '=' , 'admin' )->first();
         $this->userRole = Role::where('name', '=', 'user' )->first();
@@ -147,6 +147,26 @@ class MenusTableSeeder extends Seeder
         $this->endDropdown();
         $this->insertLink('guest', 'Login', '/login', 'cil-account-logout');
         $this->insertLink('guest', 'Register', '/register', 'cil-account-logout');
+        $this->insertTitle('user,admin', 'Main');
+        $this->insertLink('user,admin', 'WiFi List', '/main/wifi', 'cil-drop1');
+        $this->insertLink('user,admin', 'Typography', '/typography', 'cil-pencil');
+        $this->beginDropdown('user,admin', 'Base', 'cil-puzzle');
+            $this->insertLink('user,admin', 'Breadcrumb',    '/base/breadcrumb');
+            $this->insertLink('user,admin', 'Cards',         '/base/cards');
+            $this->insertLink('user,admin', 'Carousel',      '/base/carousel');
+            $this->insertLink('user,admin', 'Collapse',      '/base/collapse');
+            $this->insertLink('user,admin', 'Forms',         '/base/forms');
+            $this->insertLink('user,admin', 'Jumbotron',     '/base/jumbotron');
+            $this->insertLink('user,admin', 'List group',    '/base/list-group');
+            $this->insertLink('user,admin', 'Navs',          '/base/navs');
+            $this->insertLink('user,admin', 'Pagination',    '/base/pagination');
+            $this->insertLink('user,admin', 'Popovers',      '/base/popovers');
+            $this->insertLink('user,admin', 'Progress',      '/base/progress');
+            $this->insertLink('user,admin', 'Scrollspy',     '/base/scrollspy');
+            $this->insertLink('user,admin', 'Switches',      '/base/switches');
+            $this->insertLink('user,admin', 'Tables',        '/base/tables');
+            $this->insertLink('user,admin', 'Tabs',          '/base/tabs');
+            $this->insertLink('user,admin', 'Tooltips',      '/base/tooltips');
         $this->insertTitle('user,admin', 'Theme');
         $this->insertLink('user,admin', 'Colors', '/colors', 'cil-drop1');
         $this->insertLink('user,admin', 'Typography', '/typography', 'cil-pencil');
@@ -193,8 +213,6 @@ class MenusTableSeeder extends Seeder
             $this->insertLink('user,admin', 'Error 404',     '/404');
             $this->insertLink('user,admin', 'Error 500',     '/500');
         $this->endDropdown();
-        $this->insertLink('guest,user,admin', 'Download CoreUI', 'https://coreui.io', 'cil-cloud-download');
-        $this->insertLink('guest,user,admin', 'Try CoreUI PRO', 'https://coreui.io/pro/', 'cil-layers');
 
 
         /* Create top menu */
