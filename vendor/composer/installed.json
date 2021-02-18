@@ -119,6 +119,46 @@
             "install-path": "../brick/math"
         },
         {
+            "name": "devtools360/macaddresslookup",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samymassoud/devtools360-macaddress-lookup.git",
+                "reference": "e2e547102a5d36e978531472d2b84e9fdd626977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samymassoud/devtools360-macaddress-lookup/zipball/e2e547102a5d36e978531472d2b84e9fdd626977",
+                "reference": "e2e547102a5d36e978531472d2b84e9fdd626977",
+                "shasum": ""
+            },
+            "time": "2020-12-21T09:24:41+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Devtools360": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samy Massoud",
+                    "email": "samymassoud@gmail.com"
+                }
+            ],
+            "description": "Find Macaddress vendor from the mac address prefix using cisco vendorMacs.xml file from https://devtools360.com",
+            "support": {
+                "issues": "https://github.com/samymassoud/devtools360-macaddress-lookup/issues",
+                "source": "https://github.com/samymassoud/devtools360-macaddress-lookup/tree/1.0.0"
+            },
+            "install-path": "../devtools360/macaddresslookup"
+        },
+        {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
             "version_normalized": "0.1.1.0",

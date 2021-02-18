@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'macvendors_co' => array($vendorDir . '/macvendors/macvendors-api/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Devtools360' => array($vendorDir . '/devtools360/macaddresslookup/src'),
 );

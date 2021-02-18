@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e3fb976b61e97619838702572073006",
+    "content-hash": "1f747f0b8b73bc0871dc013d13fd39fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -117,6 +117,43 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "devtools360/macaddresslookup",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samymassoud/devtools360-macaddress-lookup.git",
+                "reference": "e2e547102a5d36e978531472d2b84e9fdd626977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samymassoud/devtools360-macaddress-lookup/zipball/e2e547102a5d36e978531472d2b84e9fdd626977",
+                "reference": "e2e547102a5d36e978531472d2b84e9fdd626977",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Devtools360": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samy Massoud",
+                    "email": "samymassoud@gmail.com"
+                }
+            ],
+            "description": "Find Macaddress vendor from the mac address prefix using cisco vendorMacs.xml file from https://devtools360.com",
+            "support": {
+                "issues": "https://github.com/samymassoud/devtools360-macaddress-lookup/issues",
+                "source": "https://github.com/samymassoud/devtools360-macaddress-lookup/tree/1.0.0"
+            },
+            "time": "2020-12-21T09:24:41+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

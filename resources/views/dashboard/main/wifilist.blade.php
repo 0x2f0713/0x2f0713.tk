@@ -37,7 +37,7 @@
                                         <thead>
                                             <tr>
                                                 <th>AP MAC</th>
-                                                <th>AP VENDOR</th>
+                                                {{-- <th>AP VENDOR</th> --}}
                                                 <th>CLIENT MAC</th>
                                                 <th>SSID</th>
                                                 <th>PASSWORD</th>
@@ -54,7 +54,7 @@
                                             @forelse ($wifis as $wifi)
                                             <tr>
                                                 <td>{{ $wifi->ap_mac }}</td>
-                                                <td>{{ $wifi->ap_vendor }}</td>
+                                                {{-- <td>{{ $wifi->ap_vendor }}</td> --}}
                                                 <td>{{ $wifi->client_mac }}</td>
                                                 <td>{{ $wifi->ssid }}</td>
                                                 <td>{{ $wifi->password }}</td>

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\WifiList;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Devtools360\MacAddressLookup;
+use Illuminate\Support\Facades\Storage;
 
 class WifiListController extends Controller
 {
@@ -48,37 +50,23 @@ class WifiListController extends Controller
      */
     public function storeMany(Request $request)
     {
-        function findVendors($mac_add) {
-            $url = "https://api.macaddress.io/v1?apiKey=at_LjfDu6vs8zrGkNvppHNfCdsyQPCfE&search=" .$mac_add;
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $response = curl_exec($ch);
-            if($response) {
-              return $response;
-            } else {
-              return "Not Found";
-            }
-        }
         $wifi_arr = preg_split ('/\r\n|\n|\r/', $request->input('data'));
         foreach ($wifi_arr as  &$wifi) {
             $wifi = preg_split ('/:/m', $wifi);
-            array_push($wifi,findVendors($wifi[array_key_first($wifi)]));
         }
         unset($wifi);
         array_unique($wifi_arr, SORT_REGULAR);
         $data = [];
         foreach ($wifi_arr as $wifi) {
             $data[] = [
-                'ap_mac' => $wifi[0],
-                'client_mac' => $wifi[1],
-                'ssid' => $wifi[2],
-                'password' => $wifi[3],
-                'ap_vendor' => $wifi[4]
+                'ap_mac' => $wifi[array_key_last($wifi)-3],
+                'client_mac' => $wifi[array_key_last($wifi)-2],
+                'ssid' => $wifi[array_key_last($wifi)-1],
+                'password' => $wifi[array_key_last($wifi)],
             ];
         }
         WifiList::insert($data);
-        return $this->index();
+        return redirect()->route('wifi.list.index');
     }
 
     /**

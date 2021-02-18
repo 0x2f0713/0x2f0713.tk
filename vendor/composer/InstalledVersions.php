@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '94a0b7d18e04309c8009c87c1e49f58e5e42a402',
+    'reference' => 'ff7040b1fa7f0ebd1753ca4a1db0eaea711ca9c4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -66,6 +66,15 @@ private static $installed = array (
       array (
         0 => '*',
       ),
+    ),
+    'devtools360/macaddresslookup' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e2e547102a5d36e978531472d2b84e9fdd626977',
     ),
     'dnoegel/php-xdg-base-dir' => 
     array (
@@ -478,7 +487,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '94a0b7d18e04309c8009c87c1e49f58e5e42a402',
+      'reference' => 'ff7040b1fa7f0ebd1753ca4a1db0eaea711ca9c4',
     ),
     'laravel/tinker' => 
     array (
