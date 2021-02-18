@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19b3790f8eb851a1b619e93b4dc2ba8a",
+    "content-hash": "2e3fb976b61e97619838702572073006",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1577,6 +1577,44 @@
                 }
             ],
             "time": "2021-01-18T20:58:21+00:00"
+        },
+        {
+            "name": "macvendors/macvendors-api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samymassoud/macvendors-api.git",
+                "reference": "f45f581d70217566f7b3c9b806a2314d0e6d9ff9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samymassoud/macvendors-api/zipball/f45f581d70217566f7b3c9b806a2314d0e6d9ff9",
+                "reference": "f45f581d70217566f7b3c9b806a2314d0e6d9ff9",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "api",
+            "autoload": {
+                "psr-0": {
+                    "macvendors_co": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Macvendors",
+                    "email": "info@macvendors.co"
+                }
+            ],
+            "description": "Macvendors.co Lookup API in PHP,Lookup for vendors name using mac address",
+            "support": {
+                "issues": "https://github.com/samymassoud/macvendors-api/issues",
+                "source": "https://github.com/samymassoud/macvendors-api/tree/master"
+            },
+            "time": "2016-01-05T20:56:30+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -7981,7 +8019,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "macvendors/macvendors-api": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

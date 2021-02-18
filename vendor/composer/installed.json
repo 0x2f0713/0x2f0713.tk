@@ -2098,6 +2098,47 @@
             "install-path": "../league/mime-type-detection"
         },
         {
+            "name": "macvendors/macvendors-api",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samymassoud/macvendors-api.git",
+                "reference": "f45f581d70217566f7b3c9b806a2314d0e6d9ff9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samymassoud/macvendors-api/zipball/f45f581d70217566f7b3c9b806a2314d0e6d9ff9",
+                "reference": "f45f581d70217566f7b3c9b806a2314d0e6d9ff9",
+                "shasum": ""
+            },
+            "time": "2016-01-05T20:56:30+00:00",
+            "default-branch": true,
+            "type": "api",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "macvendors_co": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Macvendors",
+                    "email": "info@macvendors.co"
+                }
+            ],
+            "description": "Macvendors.co Lookup API in PHP,Lookup for vendors name using mac address",
+            "support": {
+                "issues": "https://github.com/samymassoud/macvendors-api/issues",
+                "source": "https://github.com/samymassoud/macvendors-api/tree/master"
+            },
+            "install-path": "../macvendors/macvendors-api"
+        },
+        {
             "name": "maennchen/zipstream-php",
             "version": "2.1.0",
             "version_normalized": "2.1.0.0",

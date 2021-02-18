@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'macvendors_co' => array($vendorDir . '/macvendors/macvendors-api/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
 );

@@ -552,6 +552,13 @@ class ComposerStaticInit49f17b7776a683fe31e9c73fcb38c6a1
     );
 
     public static $prefixesPsr0 = array (
+        'm' => 
+        array (
+            'macvendors_co' => 
+            array (
+                0 => __DIR__ . '/..' . '/macvendors/macvendors-api/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -580,6 +587,7 @@ class ComposerStaticInit49f17b7776a683fe31e9c73fcb38c6a1
         'App\\Http\\Controllers\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/RolesController.php',
         'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Controllers\\admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/UsersController.php',
+        'App\\Http\\Controllers\\main\\WifiListController' => __DIR__ . '/../..' . '/app/Http/Controllers/main/WifiListController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Menus\\GetSidebarMenu' => __DIR__ . '/../..' . '/app/Http/Menus/GetSidebarMenu.php',
         'App\\Http\\Menus\\MenuInterface' => __DIR__ . '/../..' . '/app/Http/Menus/MenuInterface.php',
@@ -608,6 +616,7 @@ class ComposerStaticInit49f17b7776a683fe31e9c73fcb38c6a1
         'App\\Models\\Status' => __DIR__ . '/../..' . '/app/Models/Status.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Users' => __DIR__ . '/../..' . '/app/Models/Users.php',
+        'App\\Models\\WifiList' => __DIR__ . '/../..' . '/app/Models/WifiList.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -726,6 +735,7 @@ class ComposerStaticInit49f17b7776a683fe31e9c73fcb38c6a1
         'CreateRoleHierarchyTable' => __DIR__ . '/../..' . '/database/migrations/2019_12_18_092518_create_role_hierarchy_table.php',
         'CreateStatusTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_12_115248_create_status_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'CreateWifiList' => __DIR__ . '/../..' . '/database/migrations/2021_02_18_034228_create_wifi_list.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

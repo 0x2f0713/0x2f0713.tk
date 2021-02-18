@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ef1cc4ad94e4d96b6e925cd168b4d4b68cfb1dbd',
+    'reference' => '94a0b7d18e04309c8009c87c1e49f58e5e42a402',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -454,7 +454,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ef1cc4ad94e4d96b6e925cd168b4d4b68cfb1dbd',
+      'reference' => '94a0b7d18e04309c8009c87c1e49f58e5e42a402',
     ),
     'laravel/tinker' => 
     array (
@@ -509,6 +509,16 @@
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'macvendors/macvendors-api' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => 'f45f581d70217566f7b3c9b806a2314d0e6d9ff9',
     ),
     'maennchen/zipstream-php' => 
     array (
