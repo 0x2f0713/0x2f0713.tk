@@ -17,7 +17,7 @@ class WifiListController extends Controller
      */
     public function index()
     {
-        return view('dashboard.main.wifilist')->with('wifis', WifiList::all());
+        return view('dashboard.main.wifilist')->with('wifis', WifiList::all()->sortBy('ap_mac'));
     }
 
     /**
