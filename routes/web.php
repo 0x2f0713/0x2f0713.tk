@@ -117,7 +117,7 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::post('/file/cropp',      'MediaController@cropp');
             Route::get('/file/copy',        'MediaController@fileCopy')->name('media.file.copy');
         });
-        Route::prefix("main/wifi")->group(function() {
+        Route::prefix("main/wifi")->group(['middleware' => ['role:user']],function() {
             Route::get('/','main\WifiListController@index')->name('main.wifi.index');
             Route::post('/store','main\WifiListController@storeMany');
             Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
