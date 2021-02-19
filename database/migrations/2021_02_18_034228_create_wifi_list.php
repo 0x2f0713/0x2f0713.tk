@@ -18,9 +18,9 @@ class CreateWifiList extends Migration
             $table->timestamps();
             $table->string('ap_mac', 12)->default('000000000000');
             $table->string('client_mac', 12)->default('000000000000');
+            $table->integer('type')->unsigned()->default(0);
             $table->text('ssid')->nullable();
             $table->text('password')->nullable();
-            $table->text('ap_vendor')->nullable();
             $table->text('hash')->nullable();
         });
     }

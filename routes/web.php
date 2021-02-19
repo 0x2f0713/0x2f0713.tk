@@ -121,7 +121,8 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/','main\WifiListController@index')->name('main.wifi.index');
             Route::post('/store','main\WifiListController@storeMany');
             Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
-            Route::get('export','main\WifiListController@exportPotfile');
+            Route::get('export_cracked','main\WifiListController@exportPotfile');
+            Route::get('export_hashes','main\WifiListController@exportHashes');
         });
     });
 });

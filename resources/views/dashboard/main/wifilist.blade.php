@@ -6,8 +6,16 @@
         <div class="fade-in">
             <div class="row">
                 <div class="col-md-12">
-                    @if(null !== session('noti_del_duplicate'))
-                        <div class="alert alert-info" role="alert">Deleted {{ session('noti_del_duplicate') }} line(s).
+                    @if (null !== session('info'))
+                        <div class="alert alert-info" role="alert">{{ session('info') }}
+                        </div>
+                    @endif
+                    @if (null !== session('success'))
+                        <div class="alert alert-success" role="alert">{{ session('success') }}
+                        </div>
+                    @endif
+                    @if (null !== session('danger'))
+                        <div class="alert alert-danger" role="alert">{{ session('danger') }}
                         </div>
                     @endif
                     <div class="card">
@@ -23,6 +31,16 @@
                                             placeholder="Content.."></textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="data_type">Select</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" id="data_type" name="data_type">
+                                            <option value="0">Cracked WiFi</option>
+                                            <option value="1">Hash (22000)</option>
+                                            <option value="2">Hash (16800)</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                             </div>
                             <div class="card-footer">
@@ -31,8 +49,11 @@
                                 <a href="wifi/remove_dup">
                                     <button class="btn btn-sm btn-danger" type="button">Remove Duplicate WiFi</button>
                                 </a>
-                                <a href="wifi/export">
+                                <a href="wifi/export_cracked">
                                     <button class="btn btn-sm btn-success" type="button">Export cracked to .potfile</button>
+                                </a>
+                                <a href="wifi/export_hashes">
+                                    <button class="btn btn-sm btn-success" type="button">Export hashes to .22000</button>
                                 </a>
                             </div>
                         </form>
@@ -47,26 +68,32 @@
                                         <thead>
                                             <tr>
                                                 <th>AP MAC</th>
-                                                {{-- <th>AP VENDOR</th> --}}
                                                 <th>CLIENT MAC</th>
                                                 <th>SSID</th>
+                                                <th>HASH TYPE</th>
                                                 <th>PASSWORD</th>
                                                 <th>HASH</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- <tr>
-                            <td>Vishnu Serghei</td>
-                            <td>2012/01/01</td>
-                            <td>Member</td>
-                            <td><span class="badge badge-success">Active</span></td>
-                          </tr> --}}
+
                                             @forelse ($wifis as $wifi)
                                                 <tr>
                                                     <td>{{ $wifi->ap_mac }}</td>
-                                                    {{-- <td>{{ $wifi->ap_vendor }}</td> --}}
                                                     <td>{{ $wifi->client_mac }}</td>
                                                     <td>{{ $wifi->ssid }}</td>
+
+                                                    @switch($wifi->type)
+                                                        @case(0)
+                                                        <td><span class="badge badge-success">CRACKED</span></td>
+                                                        @break
+                                                        @case(1)
+                                                        <td><span class="badge badge-danger">PMKID</span></td>
+                                                        @break
+                                                        @default
+                                                        <td><span class="badge badge-danger">WPA2</span></td>
+                                                    @endswitch
+
                                                     <td>{{ $wifi->password }}</td>
                                                     <td>{{ $wifi->hash }}</td>
                                                 </tr>
