@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Routing\Route;
 
 Route::group(['middleware' => ['get.menu']], function () {
     Route::get('/', function () {           return view('dashboard.homepage'); });
@@ -59,6 +60,13 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/modals', function(){   return view('dashboard.notifications.modals'); });
         });
         Route::resource('notes', 'NotesController');
+        Route::prefix("main/wifi")->group(function() {
+            Route::get('/','main\WifiListController@index')->name('main.wifi.index');
+            Route::post('/store','main\WifiListController@storeMany');
+            Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
+            Route::get('export_cracked','main\WifiListController@exportPotfile');
+            Route::get('export_hashes','main\WifiListController@exportHashes');
+        });
     });
     Auth::routes();
 
@@ -117,12 +125,5 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::post('/file/cropp',      'MediaController@cropp');
             Route::get('/file/copy',        'MediaController@fileCopy')->name('media.file.copy');
         });
-    });
-    Route::prefix("main/wifi")->group(['middleware' => ['role:user']],function() {
-        Route::get('/','main\WifiListController@index')->name('main.wifi.index');
-        Route::post('/store','main\WifiListController@storeMany');
-        Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
-        Route::get('export_cracked','main\WifiListController@exportPotfile');
-        Route::get('export_hashes','main\WifiListController@exportHashes');
     });
 });
