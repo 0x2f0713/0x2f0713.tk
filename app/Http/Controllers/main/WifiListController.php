@@ -8,6 +8,8 @@ use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use Devtools360\MacAddressLookup;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Response;
 
 class WifiListController extends Controller
 {
@@ -66,7 +68,7 @@ class WifiListController extends Controller
             ];
         }
         WifiList::insert($data);
-        return redirect()->route('wifi.list.index');
+        return redirect()->route('main.wifi.index');
     }
 
     /**
@@ -112,5 +114,29 @@ class WifiListController extends Controller
     public function destroy(WifiList $wifiList)
     {
         //
+    }
+
+    /**
+     * Remove the duplicate resource from storage.
+     *
+     *
+     * @return redirect()
+     */
+    public function destroyDuplicate()
+    {
+        $delete = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.id < t2.id AND t1.ap_mac = t2.ap_mac');
+        return redirect()->route('main.wifi.index')->with('noti_del_duplicate', $delete);
+    }
+
+    public function exportPotfile() {
+        $data = WifiList::all();
+        $textData = "";
+        for ($i=0; $i < count($data); $i++) {
+            // $textData = $textData.$data[$i]['ap_mac'].":".$data[$i]['client_mac'].":".$data[$i]['ssid'].":".$data[$i]['password']."{PHP_EOF}";
+            $textData = $textData."{$data[$i]['ap_mac']}:{$data[$i]['client_mac']}:{$data[$i]['ssid']}:{$data[$i]['password']}".PHP_EOL;
+        }
+        $myName = "0x2f0713.potfile";
+        $headers = ['Content-type'=>'text/plain', 'test'=>'YoYo', 'Content-Disposition'=>sprintf('attachment; filename="%s"', $myName),'X-BooYAH'=>'WorkyWorky','Content-Length'=>strlen($textData)];
+        return response($textData,200,$headers);
     }
 }

@@ -118,8 +118,10 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/file/copy',        'MediaController@fileCopy')->name('media.file.copy');
         });
         Route::prefix("main/wifi")->group(function() {
-            Route::get('/','main\WifiListController@index')->name('wifi.list.index');
+            Route::get('/','main\WifiListController@index')->name('main.wifi.index');
             Route::post('/store','main\WifiListController@storeMany');
+            Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
+            Route::get('export','main\WifiListController@exportPotfile');
         });
     });
 });

@@ -6,6 +6,10 @@
         <div class="fade-in">
             <div class="row">
                 <div class="col-md-12">
+                    @if(null !== session('noti_del_duplicate'))
+                        <div class="alert alert-info" role="alert">Deleted {{ session('noti_del_duplicate') }} line(s).
+                        </div>
+                    @endif
                     <div class="card">
                         <form class="form-horizontal" action="wifi/store" method="post" enctype="multipart/form-data">
                             <div class="card-header"><strong>Basic Form</strong> Elements</div>
@@ -24,6 +28,12 @@
                             <div class="card-footer">
                                 <button class="btn btn-sm btn-primary" type="submit"> Submit</button>
                                 <button class="btn btn-sm btn-danger" type="reset"> Reset</button>
+                                <a href="wifi/remove_dup">
+                                    <button class="btn btn-sm btn-danger" type="button">Remove Duplicate WiFi</button>
+                                </a>
+                                <a href="wifi/export">
+                                    <button class="btn btn-sm btn-success" type="button">Export cracked to .potfile</button>
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -52,14 +62,14 @@
                             <td><span class="badge badge-success">Active</span></td>
                           </tr> --}}
                                             @forelse ($wifis as $wifi)
-                                            <tr>
-                                                <td>{{ $wifi->ap_mac }}</td>
-                                                {{-- <td>{{ $wifi->ap_vendor }}</td> --}}
-                                                <td>{{ $wifi->client_mac }}</td>
-                                                <td>{{ $wifi->ssid }}</td>
-                                                <td>{{ $wifi->password }}</td>
-                                                <td>{{ $wifi->hash }}</td>
-                                            </tr>
+                                                <tr>
+                                                    <td>{{ $wifi->ap_mac }}</td>
+                                                    {{-- <td>{{ $wifi->ap_vendor }}</td> --}}
+                                                    <td>{{ $wifi->client_mac }}</td>
+                                                    <td>{{ $wifi->ssid }}</td>
+                                                    <td>{{ $wifi->password }}</td>
+                                                    <td>{{ $wifi->hash }}</td>
+                                                </tr>
                                             @empty
                                                 <p>No WiFi</p>
                                             @endforelse
