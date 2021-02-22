@@ -177,6 +177,17 @@ class WifiListController extends Controller
         $headers = ['Content-type' => 'text/plain', 'Content-Disposition' => sprintf('attachment; filename="%s"', $myName), 'Content-Length' => strlen($textData)];
         return response($textData, 200, $headers);
     }
+    public function exportPassword()
+    {
+        $data = WifiList::where("type", 0)->get();
+        $textData = "";
+        for ($i = 0; $i < count($data); $i++) {
+            $textData = $textData . "{$data[$i]['password']}" . PHP_EOL;
+        }
+        $myName = "0x2f0713_password.txt";
+        $headers = ['Content-type' => 'text/plain', 'Content-Disposition' => sprintf('attachment; filename="%s"', $myName), 'Content-Length' => strlen($textData)];
+        return response($textData, 200, $headers);
+    }
     public function exportHashes()
     {
         $data = WifiList::where("type", ">", 0)->get();

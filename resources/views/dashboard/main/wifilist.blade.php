@@ -52,6 +52,9 @@
                                 <a href="wifi/export_cracked">
                                     <button class="btn btn-sm btn-success" type="button">Export cracked to .potfile</button>
                                 </a>
+                                <a href="wifi/export_passwd">
+                                    <button class="btn btn-sm btn-success" type="button">Export password to .txt</button>
+                                </a>
                                 <a href="wifi/export_hashes">
                                     <button class="btn btn-sm btn-success" type="button">Export hashes to .22000</button>
                                 </a>
