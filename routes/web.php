@@ -62,10 +62,15 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::prefix("main/wifi")->group(function() {
             Route::get('/','main\WifiListController@index')->name('main.wifi.index');
             Route::post('/store','main\WifiListController@storeMany');
+            Route::post('wifi/store','main\WifiListController@storeMany');
             Route::get('/remove_dup','main\WifiListController@destroyDuplicate');
+            Route::get('wifi/remove_dup','main\WifiListController@destroyDuplicate');
             Route::get('export_cracked','main\WifiListController@exportPotfile');
+            Route::get('wifi/export_cracked','main\WifiListController@exportPotfile');
             Route::get('export_passwd','main\WifiListController@exportPassword');
+            Route::get('wifi/export_passwd','main\WifiListController@exportPassword');
             Route::get('export_hashes','main\WifiListController@exportHashes');
+            Route::get('wifi/export_hashes','main\WifiListController@exportHashes');
         });
     });
     Auth::routes();

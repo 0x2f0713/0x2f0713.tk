@@ -162,8 +162,11 @@ class WifiListController extends Controller
      */
     public function destroyDuplicate()
     {
+        // Xoa wifi trung da co pass, ko hash
         $delete1 = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.id > t2.id AND t1.password = t2.password AND t1.ap_mac = t2.ap_mac AND ((t1.type = 0 AND t2.type = 0))');
+        // Xoa wifi trung da co pass nhung co hash
         $delete2 = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.type > t2.type AND t2.type = 0 AND t1.ap_mac = t2.ap_mac');
+        // Xoa hash giong nhau
         $delete3 = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.id > t2.id AND t1.type > 0 AND t2.type > 0 AND t1.hash = t2.hash AND t1.ap_mac = t2.ap_mac');
         $delete = $delete1 + $delete2 + $delete3;
         return redirect()->route('main.wifi.index')->with('info', "Deleted {$delete} line(s).");
