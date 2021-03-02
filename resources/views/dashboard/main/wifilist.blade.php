@@ -46,8 +46,14 @@
                             <div class="card-footer">
                                 <button class="btn btn-sm btn-primary" type="submit"> Submit</button>
                                 <button class="btn btn-sm btn-danger" type="reset"> Reset</button>
-                                <a href="wifi/remove_dup">
-                                    <button class="btn btn-sm btn-danger" type="button">Remove Duplicate WiFi</button>
+                                <a href="wifi/destroyDuplicatePasswordFoundNoHash">
+                                    <button class="btn btn-sm btn-danger" type="button">destroyDuplicatePasswordFoundNoHash</button>
+                                </a>
+                                <a href="wifi/destroyDuplicatePasswordFoundHaveHash">
+                                    <button class="btn btn-sm btn-danger" type="button">destroyDuplicatePasswordFoundHaveHash</button>
+                                </a>
+                                <a href="wifi/destroyDuplicateHash">
+                                    <button class="btn btn-sm btn-danger" type="button">destroyDuplicateHash</button>
                                 </a>
                                 <a href="wifi/export_cracked">
                                     <button class="btn btn-sm btn-success" type="button">Export cracked to .potfile</button>
