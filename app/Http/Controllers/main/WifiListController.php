@@ -163,7 +163,7 @@ class WifiListController extends Controller
     public function destroyDuplicatePasswordFoundNoHash()
     {
         // Xoa wifi trung da co pass, ko hash
-        $delete = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.id > t2.id AND t1.password = t2.password AND t1.ap_mac = t2.ap_mac AND ((t1.type = 0 AND t2.type = 0))');
+        $delete = DB::delete('DELETE t1 FROM wifi_list t1 INNER JOIN wifi_list t2 WHERE t1.id > t2.id AND t1.password = t2.password AND t1.ap_mac = t2.ap_mac AND t1.type = 0 AND t2.type = 0 AND t1.ssid = t2.ssid');
         return redirect()->route('main.wifi.index')->with('info', "Deleted {$delete} line(s).");
     }
     public function destroyDuplicatePasswordFoundHaveHash()
