@@ -76,6 +76,7 @@
                                     <table class="table table-responsive-sm table-bordered table-striped table-sm">
                                         <thead>
                                             <tr>
+                                                <th>Uploaded at</th>
                                                 <th>AP MAC</th>
                                                 <th>CLIENT MAC</th>
                                                 <th>SSID</th>
@@ -88,6 +89,7 @@
 
                                             @forelse ($wifis as $wifi)
                                                 <tr>
+                                                    <td>{{ $wifi->created_at }}</td>
                                                     <td>{{ $wifi->ap_mac }}</td>
                                                     <td>{{ $wifi->client_mac }}</td>
                                                     <td>{{ $wifi->ssid }}</td>
