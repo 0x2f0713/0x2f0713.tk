@@ -89,7 +89,7 @@
 
                                             @forelse ($wifis as $wifi)
                                                 <tr>
-                                                    <td>{{ Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC')->setTimezone('Asia/Ho_Chi_Minh')->toDateTimeString() }}</td>
+                                                    <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $timestamp, 'UTC')->setTimezone('Asia/Ho_Chi_Minh')->toDateTimeString() }}</td>
                                                     <td>{{ $wifi->ap_mac }}</td>
                                                     <td>{{ $wifi->client_mac }}</td>
                                                     <td>{{ $wifi->ssid }}</td>
