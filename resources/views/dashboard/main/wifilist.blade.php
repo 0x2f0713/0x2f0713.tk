@@ -89,7 +89,7 @@
 
                                             @forelse ($wifis as $wifi)
                                                 <tr>
-                                                    <td>{{ date('H:i:s d-m-Y', strtotime($wifi->created_at)) }}</td>
+                                                    <td>{{ date('H:i:s d/m/Y', strtotime($wifi->created_at)) }}</td>
                                                     <td>{{ $wifi->ap_mac }}</td>
                                                     <td>{{ $wifi->client_mac }}</td>
                                                     <td>{{ $wifi->ssid }}</td>
